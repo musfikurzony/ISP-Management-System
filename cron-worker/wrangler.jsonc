@@ -1,0 +1,20 @@
+// Configuration for the optional scheduled billing worker.
+// Deploy with:  npx wrangler deploy --config cron-worker/wrangler.jsonc
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "isp-billing-cron",
+  "main": "index.js",
+  "compatibility_date": "2026-06-01",
+  "workers_dev": false,
+  "triggers": {
+    // 19:05 UTC = 01:05 at night in Bangladesh, every day.
+    "crons": ["5 19 * * *"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "isp_billing_db",
+      "database_id": "54b72455-5266-4f70-8880-33a07bff7253"
+    }
+  ]
+}
