@@ -1,0 +1,35 @@
+// Cloudflare configuration for the ISP Billing application (Cloudflare Pages).
+// "DB" is the name the code uses to reach the D1 database.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "isp-billing",
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2026-06-01",
+
+  // PRODUCTION (the live site, built from the "main" branch)
+  "vars": { "APP_ENV": "production" },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "isp_billing_db",
+      "database_id": "REPLACE_WITH_PRODUCTION_DATABASE_ID",
+      "migrations_dir": "migrations"
+    }
+  ],
+
+  "env": {
+    // PREVIEW (test copies built from other branches) uses a separate database,
+    // so experiments can never touch real customer data.
+    "preview": {
+      "vars": { "APP_ENV": "preview" },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "isp_billing_db_preview",
+          "database_id": "REPLACE_WITH_PREVIEW_DATABASE_ID",
+          "migrations_dir": "migrations"
+        }
+      ]
+    }
+  }
+}
