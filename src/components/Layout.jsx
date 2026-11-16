@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { api } from '../lib/api.js';
 import { useApp } from '../lib/app.jsx';
+import { InstallButton } from '../lib/install.jsx';
 import { Button, ErrorNote, Field, InfoNote, Input, Modal } from './ui.jsx';
 
 const ICONS = {
@@ -141,6 +142,7 @@ export default function Layout({ children }) {
         </button>
         <div className="hidden text-sm text-slate-500 lg:block">{t('ISP Billing & Customer Management')}</div>
         <div className="flex items-center gap-2">
+          <InstallButton />
           <div className="flex overflow-hidden rounded-lg border border-slate-300 text-xs font-medium">
             <button type="button" onClick={() => setLang('en')} className={'px-2.5 py-1.5 ' + (lang === 'en' ? 'bg-blue-600 text-white' : 'bg-white text-slate-600')}>EN</button>
             <button type="button" onClick={() => setLang('bn')} className={'px-2.5 py-1.5 ' + (lang === 'bn' ? 'bg-blue-600 text-white' : 'bg-white text-slate-600')}>বাংলা</button>

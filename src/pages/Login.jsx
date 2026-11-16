@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { api } from '../lib/api.js';
 import { useApp } from '../lib/app.jsx';
+import { InstallButton } from '../lib/install.jsx';
 import { Button, ErrorNote, Field, InfoNote, Input } from '../components/ui.jsx';
 
 export default function Login() {
@@ -56,6 +57,7 @@ export default function Login() {
           )}
           <Button variant="primary" type="submit" busy={busy} className="w-full">{setupRequired ? t('Create administrator') : t('Log in')}</Button>
         </form>
+        <div className="mt-3"><InstallButton full /></div>
         <div className="mt-4 text-center text-xs text-slate-500">
           <button type="button" className={lang === 'en' ? 'font-semibold text-blue-700' : ''} onClick={() => setLang('en')}>English</button>
           {' · '}

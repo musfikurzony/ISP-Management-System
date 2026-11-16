@@ -126,6 +126,18 @@ Then go to **Settings** and enter your ISP name, logo, address and billing date.
 
 ---
 
+## Install on a phone (like an app)
+
+The site is an installable web app (PWA).
+
+- **Android (Chrome):** open the site, then press the green **Install app** button (on the login page and in the top bar), or use Chrome menu ⋮ → **Add to Home screen → Install**.
+- **iPhone (Safari):** press the **Share** button → **Add to Home Screen**.
+- **Computer (Chrome / Edge):** press the install icon at the right end of the address bar.
+
+The app then opens full-screen from its own icon. It still needs internet: billing data is always loaded live from the server and is never stored on the phone.
+
+---
+
 ## 3. Automatic monthly billing
 
 Set the **billing date** and **due date** in Settings.

@@ -14,6 +14,9 @@ export const bn = {
   Month: 'মাস', Amount: 'পরিমাণ', Total: 'মোট', Description: 'বিবরণ', Type: 'ধরন', Details: 'বিস্তারিত', Name: 'নাম', Other: 'অন্যান্য',
   'This month': 'এই মাস', Current: 'বর্তমান',
 
+  'Install app': 'অ্যাপ ইনস্টল করুন',
+  'On iPhone: tap the Share button in Safari, then "Add to Home Screen".': 'আইফোনে: Safari-তে Share বাটনে চাপুন, তারপর "Add to Home Screen" বেছে নিন।',
+
   // Login and password
   'Welcome! Create the first administrator account to start using the software.': 'স্বাগতম! সফটওয়্যার ব্যবহার শুরু করতে প্রথম অ্যাডমিনিস্ট্রেটর অ্যাকাউন্ট তৈরি করুন।',
   'Your full name': 'আপনার পুরো নাম', 'Password again': 'পাসওয়ার্ড আবার লিখুন', 'Create administrator': 'অ্যাডমিনিস্ট্রেটর তৈরি করুন',
