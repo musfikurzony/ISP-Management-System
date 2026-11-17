@@ -189,6 +189,29 @@ passwords or keys in this repository).
 
 ---
 
+## Forgot a password?
+
+- **Someone else is an Administrator:** they open **Users → Edit**, type a new password and save. That also unlocks the account.
+- **You are the only Administrator and forgot your password (or username):** on your computer, in the project folder, run in CMD:
+
+  ```bat
+  npx wrangler login
+  ```
+  ```bat
+  npm run reset-password
+  ```
+
+  `npx wrangler login` opens the browser once so you can sign in to Cloudflare (the same account that holds the database).
+  The reset tool lists all usernames, asks which one to reset, and asks for a new password twice. The account is also unlocked,
+  re-activated and signed out everywhere, and the reset is written to the Activity History.
+  Only someone who can sign in to your Cloudflare account can do this, so keep that account's password safe.
+
+- **Locked after 5 wrong passwords:** wait 15 minutes, or reset the password as above.
+
+Tip: create a second Administrator account and keep its password somewhere safe, so you never depend on one password.
+
+---
+
 ## 6. Where things are (for future changes)
 
 ```
@@ -202,6 +225,7 @@ src/                   screens (React)
   pages/               one file per screen
   lib/bn.js            Bangla translations
 cron-worker/           optional nightly scheduler
+scripts/               emergency password reset tool
 tests/smoke.mjs        automatic end-to-end checks
 wrangler.jsonc         Cloudflare configuration (production + preview)
 .github/workflows/     automatic deploy and nightly backup

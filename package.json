@@ -11,7 +11,8 @@
     "db:migrate:remote": "wrangler d1 migrations apply isp_billing_db --remote",
     "deploy": "npm run build && wrangler pages deploy",
     "backup": "wrangler d1 export isp_billing_db --remote --output=backup.sql",
-    "test": "node tests/smoke.mjs"
+    "test": "node tests/smoke.mjs",
+    "reset-password": "node scripts/reset-password.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
